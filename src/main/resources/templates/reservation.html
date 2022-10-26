@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" th:href="@{/design/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <meta charset="UTF-8">
+    <title>Reservation | Bain Communications</title>
+    <script th:src="@{/components/header.js}" type="text/javascript" defer></script>
+    <script th:src="@{/components/footer.js}" type="text/javascript" defer></script>
+
+</head>
+<body>
+<header-component></header-component>
+<article>
+<form method="post" th:action="@{/reserve}" th:object="${reservation}" id="reservationForm">
+<label id="date" for="date">Pick a date</label>
+<input  th:field="*{date}" type="date"/>
+    <label for="time">Select a time:</label>
+    <input type="time" id="time" th:field="*{time}" />
+    <div th:each="service : ${allServices}">
+
+        <input id="services" th:field="*{serviceList}" type="checkbox"
+               th:value="${service}"/>
+
+        <label th:text="${service}">SERVICE</label>
+    </div>
+
+<input type="submit" value="Reserve"/>
+
+</form>
+</article>
+<footer-component></footer-component>
+</body>
+
+</html>
