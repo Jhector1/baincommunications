@@ -20,7 +20,7 @@ footer .link, footer .contact, footer .logo {
     display: inline-block;
 }
 
-footer .logo {
+ .logo2 {
     position: absolute;
     display: inline-block;
     width: 30%;
@@ -52,8 +52,8 @@ footer .link {
 }
       </style>
      <footer>
-    <div class="logo">
-        <img src="/images/bainLogo2.png"/>
+    <div class="logo2">
+        <img src="/images/bainLogo.PNG"/>
     </div>
     <div class="link">
         <ul>

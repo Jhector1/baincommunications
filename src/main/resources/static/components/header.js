@@ -40,11 +40,10 @@ a:active {
     background-color: transparent;
 }
  .logo img{
-    width:7%;
+    width:5%;
     position: absolute;
     left: 50px;
     bottom:0;
-    border: blue 1px solid;
 }
 .nav-link li {
     float: left;
@@ -103,7 +102,7 @@ a:active {
  </div>
 <header id="myHeader">
     <div class="logo">
-        <img src="../images/bainLogo1.png" alt="logo"/>
+        <img src="../images/bainLogo91.png" alt="logo"/>
     </div>
     <ul class="nav-link">
         <li class="li-nav"><a href="/">Home</a></li>
