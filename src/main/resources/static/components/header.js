@@ -195,6 +195,7 @@ if(page!==""){
     let head_nav =document.querySelector("#myHeader");
     document.querySelector(".photo_Background").style.display="none";
     head_nav.style.top="0";
+    head_nav.style.position="sticky";
     head_nav.style.backgroundColor="#F8F8F8";
     head_nav.style.borderBottom="grey 1px solid";
     document.querySelector(".nav-link").style.border="none";
