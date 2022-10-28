@@ -5,6 +5,9 @@ class Footer extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
       <style>
 
         footer {
@@ -50,7 +53,8 @@ footer .link {
     text-decoration: none;
     font-size: 20px;
 }
-      </style>
+      </style><title></title>
+      </head>
      <footer>
     <div class="logo2">
         <img src="/images/bainLogo.PNG"/>

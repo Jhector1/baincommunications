@@ -4,7 +4,10 @@ class Header extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML = `<style>
+        this.innerHTML = `<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
 
 
  header {
@@ -13,6 +16,7 @@ class Header extends HTMLElement {
     position: relative;
     background-color: #46464a;
     height: 60px;
+    z-index: 1;
 
 
 }
@@ -94,8 +98,56 @@ a:active {
      text-align: center;
     background-position: center;
 }
+/*dropdown styling section*/
+.dropbtn {
+  background-color: transparent;
+  color: #6A6874;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
 
-</style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #46464a;
+  min-width: 160px;
+  border: blue 4px solid;
+  border-top: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #6A6874;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {color: #AEADB2;
+    background-color: transparent;}
+ .dropbtn i:hover{
+ transform: rotate:( 60deg);
+ }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: #AEADB2;
+    background-color: transparent;
+}
+
+</style><title></title></head>
 <body>
  <div class="photo_Background">
     <h1>Bain Communications</h1>
@@ -107,7 +159,13 @@ a:active {
     <ul class="nav-link">
         <li class="li-nav"><a href="/">Home</a></li>
         <li class="li-nav"><a href="/about">About</a></li>
-        <li class="li-nav"><a href="/reserve">Services</a></li>
+        <li class="li-nav"><div class="dropdown">
+  <button class="dropbtn">Services<i style='padding-left:10px' class='fa fa-chevron-down'></i></button>
+  <div class="dropdown-content">
+  <a href="#">Phone Consultation</a>
+  <a href="/reserve">Home Consultation</a>
+  </div>
+</div></li>
         <li class="li-nav"><a href="#">Reviews</a></li>
         <li class="li-nav"><a href="/contact">Contact</a></li>
     </ul>
@@ -134,11 +192,14 @@ function myFunction() {
 var path = window.location.pathname;
 var page = path.split("/").pop();
 if(page!==""){
+    let head =document.querySelector("#myHeader");
     document.querySelector(".photo_Background").style.display="none";
-    document.querySelector("#myHeader").style.top="0px";
+    head.style.top="0px";
+    head.style.position="sticky";
+    head.style.backgroundColor="#F8F8F8";
+    head.style.borderBottom="grey 1px solid";
+    document.querySelector(".nav-link").style.border="none";
 
-    document.querySelector("#myHeader").style.position="sticky";
-    document.querySelector("#myHeader").style.backgroundColor="#F8F8F8";
 
 }
 else{

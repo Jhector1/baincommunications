@@ -145,7 +145,32 @@ left: 100px;
    bottom:50px;
     left: 100px;
 }
+.reservation-form{
+    margin: 20px auto 0;
 
+ }
+.reservation-{
+    position: relative;
+
+    margin: auto;
+    height: 490px;
+}
+.btn{
+align-items: center;
+    justify-content: center;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+}
+.reservation-2, .reservation-1{
+    position: absolute;
+    width: 20%;
+    margin-left: 40%;
+}
+.input-field{
+    position: absolute;
+    right: 0;
+}
 #block-b2 {
     bottom: 50px;
     right: 100px
