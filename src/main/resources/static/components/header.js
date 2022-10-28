@@ -192,12 +192,11 @@ function myFunction() {
 var path = window.location.pathname;
 var page = path.split("/").pop();
 if(page!==""){
-    let head =document.querySelector("#myHeader");
+    let head_nav =document.querySelector("#myHeader");
     document.querySelector(".photo_Background").style.display="none";
-    head.style.top="0px";
-    head.style.position="sticky";
-    head.style.backgroundColor="#F8F8F8";
-    head.style.borderBottom="grey 1px solid";
+    head_nav.style.top="0px";
+    head_nav.style.backgroundColor="#F8F8F8";
+    head_nav.style.borderBottom="grey 1px solid";
     document.querySelector(".nav-link").style.border="none";
 
 
