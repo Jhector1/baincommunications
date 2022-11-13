@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/design/style.css}">
 
 
@@ -18,39 +19,44 @@
         <div class="reservation-1">
             <div class="reservation-form">
                 <label for="firstname">First Name: </label>
+            </div>
+            <div>
                 <input class="input-field" id="firstname" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="lastname">Last Name: </label>
-                <input class="input-field" id="lastname" type="text"/>
+                <label for="lastname">Last Name: </label></div>
+            <div class="reservation-form"><input class="input-field" id="lastname" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="address">Address: </label>
-                <input class="input-field" id="address" type="text"/>
+                <label for="address">Address: </label></div>
+            <div class="reservation-form"><input class="input-field" id="address" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="city">City: </label>
-                <input class="input-field" id="city" type="text"/>
+                <label for="city">City: </label></div>
+            <div class="reservation-form"><input class="input-field" id="city" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="state">State: </label>
-                <input class="input-field" id="state" type="text"/>
+                <label for="state">State: </label></div>
+            <div class="reservation-form"><input class="input-field" id="state" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="zip">Zip: </label>
-                <input class="input-field" id="zip" type="text"/>
+                <label for="zip">Zip: </label></div>
+            <div class="reservation-form"><input class="input-field" id="zip" type="text"/>
             </div>
             <div class="reservation-form">
-                <label for="date">Pick a date</label>
-                <input th:field="*{date}" id="date" type="date"/>
+                <label for="date">Pick a date</label></div>
+            <div class="reservation-form"><input th:field="*{date}" id="date" type="date"/>
             </div>
 
             <div class="reservation-form">
                 <label for="time">Select a time:</label>
-                <input type="time" id="time" th:field="*{time}"/>
             </div>
-            <br>
-            <div class="reservation-form"><label>Choose the services you need</label><br>
+            <div class="reservation-form"><input type="time" id="time" th:field="*{time}"/>
+            </div>
+            </div>
+
+
+           <div class="reservation-2"> <div class="reservation-form b"><label>Choose the services you need</label><br>
                 <div th:each="service : ${allServices}">
 
                     <input id="services" th:field="*{serviceList}" type="checkbox"
@@ -60,56 +66,57 @@
                 </div>
             </div>
         </div>
-<!--        <div class="reservation-2">-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="firstname2">First Name: </label>-->
-<!--                <input class="input-field" id="firstname2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="lastname2">Last Name: </label>-->
-<!--                <input class="input-field" id="lastname2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="address2">Address: </label>-->
-<!--                <input class="input-field" id="address2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="city2">City: </label>-->
-<!--                <input class="input-field" id="city2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="state2">Sttjttjjttjtate: </label>-->
-<!--                <input class="input-field" id="state2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="zip2">Zip: </label>-->
-<!--                <input class="input-field" id="zip2" type="text"/>-->
-<!--            </div>-->
-<!--            <div class="reservation-form">-->
-<!--                <label for="date2">Pick a date</label>-->
-<!--                <input th:field="*{date}" id="date2" type="date"/>-->
-<!--            </div>-->
+        <!--        <div class="reservation-2">-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="firstname2">First Name: </label>-->
+        <!--                <input class="input-field" id="firstname2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="lastname2">Last Name: </label>-->
+        <!--                <input class="input-field" id="lastname2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="address2">Address: </label>-->
+        <!--                <input class="input-field" id="address2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="city2">City: </label>-->
+        <!--                <input class="input-field" id="city2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="state2">Sttjttjjttjtate: </label>-->
+        <!--                <input class="input-field" id="state2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="zip2">Zip: </label>-->
+        <!--                <input class="input-field" id="zip2" type="text"/>-->
+        <!--            </div>-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="date2">Pick a date</label>-->
+        <!--                <input th:field="*{date}" id="date2" type="date"/>-->
+        <!--            </div>-->
 
-<!--            <div class="reservation-form">-->
-<!--                <label for="time2">Select a time:</label>-->
-<!--                <input type="time" id="time2" th:field="*{time}"/>-->
-<!--            </div>-->
-<!--            <br>-->
-<!--            <div class="reservation-form"><label>Choose the services you need</label><br>-->
-<!--                <div th:each="service : ${allServices}">-->
+        <!--            <div class="reservation-form">-->
+        <!--                <label for="time2">Select a time:</label>-->
+        <!--                <input type="time" id="time2" th:field="*{time}"/>-->
+        <!--            </div>-->
+        <!--            <br>-->
+        <!--            <div class="reservation-form"><label>Choose the services you need</label><br>-->
+        <!--                <div th:each="service : ${allServices}">-->
 
-<!--                    <input id="services2" th:field="*{serviceList}" type="checkbox"-->
-<!--                           th:value="${service}"/>-->
+        <!--                    <input id="services2" th:field="*{serviceList}" type="checkbox"-->
+        <!--                           th:value="${service}"/>-->
 
-<!--                    <label th:text="${service}">SERVICE</label>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
-    <div class="btn" ><input type="submit" value="Reserve"/></div>
+        <!--                    <label th:text="${service}">SERVICE</label>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <div class="btn"><input type="submit" value="Reserve"/></div>
+    </div >
+
 </form>
 
-<footer-component></footer-component>
+
 </body>
 
 </html>

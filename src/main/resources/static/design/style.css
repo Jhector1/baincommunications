@@ -5,9 +5,12 @@
     font-family: Calibri, serif;
 
 }
-.services{
+
+
+.services {
     background-color: red;
 }
+
 body {
     background-color: #F8F8F8;
 }
@@ -16,7 +19,6 @@ h3 {
     text-align: center;
     background-position: center;
 }
-
 
 
 h2 {
@@ -35,13 +37,6 @@ h3 {
 
 .contact ul {
     list-style-type: none;
-}
-.block{
-    width:90%;
-    height:1200px;
-    margin: auto;
-    position: relative;
-    z-index: -1;
 }
 
 span {
@@ -80,46 +75,64 @@ p.description {
     text-align: center;
     margin: 20px auto;
     font-size: 20px;
+    width: 90%;
 
 }
- .about-us ul{
-     align-content: center;
- }
+
+.about-us ul {
+    align-content: center;
+}
 
 /*CLASS ELEMENT*/
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-.about-us{
+
+.about-us {
     width: 60%;
     margin: 50px auto 0;
 }
-.about-us h1{
+
+.about-us h1 {
     text-align: center;
 }
-.about-us p, .brand-work-with{
+
+.about-us p, .brand-work-with {
     margin-top: 50px;
 }
+.brand-work-with{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
 
-.brand-work-with li{
-    margin-right: 50px;
-    display: inline;
 
 }
+.brand-work-with a{
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px){
+    .block{
+        flex-wrap: wrap;
+    }
+}
+    .block{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+width: 80%;
+        margin-bottom: 20px;
+        z-index: -1;
+    }
 
 .block-pic {
-    display: inline-block;
-    position: absolute;
+
     width: 500px;
     box-shadow: 20px 20px 50px 15px grey;
     border-radius: 20px;
-
     height: 500px;
-
     background-color: white;
+    min-width: 300px;
+    margin: 7px ;
 }
 
 
@@ -130,53 +143,69 @@ p.description {
     background-position: center;
 }
 
-#block-a1 {
-left: 100px;
-    top:50px;
-}
-
-#block-a2 {
-    right: 100px;
-    top: 50px;
-}
-
-
-#block-b1 {
-   bottom:50px;
-    left: 100px;
-}
-.reservation-form{
-    margin: 20px auto 0;
-
- }
-.reservation-{
-    position: relative;
-
-    margin: auto;
+form{ background-color: red}
+#container {
+   display: grid;
     height: 490px;
-}
-.btn{
-align-items: center;
+    background-color: blue;
     justify-content: center;
+
+}
+
+
+.reservation-1{
+    grid-template:  repeat(8, 1fr)/ 1fr 1fr;
+}
+.reservation-2, .reservation-1 {
+    align-items: center;
+    justify-content: center;
+
+    display: grid;
+    width: 250px;
+
+}
+
+
+
+footer {
     display: flex;
-    position: sticky;
-    bottom: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    /*position: relative;*/
+    background-color: #46464a;
+    border: blue 2px solid;
+    height: auto;
+    padding: 30px;
+    margin-top: 50px;
 }
-.reservation-2, .reservation-1{
-    position: absolute;
-    width: 20%;
-    margin-left: 40%;
+
+
+.logo2 {
+
+    width: 30%;
+
 }
-.input-field{
-    position: absolute;
-    right: 0;
-}
-#block-b2 {
-    bottom: 50px;
-    right: 100px
+
+footer .link {
+    text-decoration: none;
+
 }
 
 
 
+.contact li, .link li {
+
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.contact li{
+    text-align: center;
+
+}
+.contact{
+    margin-top: 20px;
+}
 
 
