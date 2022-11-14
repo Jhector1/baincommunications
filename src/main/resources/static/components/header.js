@@ -196,7 +196,7 @@ height: auto;
   min-width: 160px;
   border: blue 4px solid;
   border-top: none;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -253,8 +253,8 @@ height: auto;
 }
 
 customElements.define('header-component', Header);
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
+let header = document.getElementById("myHeader");
+let sticky = header.offsetTop;
 
 function myFunction() {
     if (window.scrollY > sticky) {
@@ -311,15 +311,6 @@ if(x.matches) {
         }
     });
 }
-}
-else{
-    const header2= document.querySelector("header").style;
-    header2.justifContent='space-around';
-    header2.alignItems="center";
-    header2.display= "flex";
-    header2.backgroundColor= "#46464a";
-    header2.height= "60px";
-    header2.zIndex= "1";
 }
 funcChange();
 window.addEventListener('resize', funcChange);
