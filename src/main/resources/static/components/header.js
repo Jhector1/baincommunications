@@ -20,11 +20,11 @@ align-items: center;
 
 
 }
-#bar{
-font-size: 2em;
- margin: 5px;
- display: none;
-}
+/*#bar{*/
+/*font-size: 2em;*/
+/* margin: 5px;*/
+/* display: none;*/
+/*}*/
 
  .nav-link{
     list-style-type: none;
@@ -33,7 +33,6 @@ font-size: 2em;
 width: 650px;
 height: auto;
     right: 50px;
-    border: blue solid 4px;
 }
 
 
@@ -49,11 +48,14 @@ display: none;
 position: absolute;
 right: 5%;
 display: inline-block;
-bottom: 45%;
+top: 5%;
 } 
 .triangle {
 font-size: 6vw;
-color: #6A6A75;
+color: cornflowerblue;
+}
+span, a, .description{
+font-size: 1em;
 }
 header {
 display: block;
@@ -70,10 +72,10 @@ height: 100%;
 
 
 }
-header:hover{
-padding: 0;
-left: 0;
-}
+/*.triangle:hover{*/
+/*padding: 0;*/
+/*left: 0;*/
+/*}*/
 article, footer, .photo_Background:not(header){
     margin-left: 12.56%;
 }
@@ -83,11 +85,11 @@ width: 80%;
 height: auto;
 
 }
-#bar{
-display: block;
-position: fixed;
-top: 2px;
-}
+/*#bar{*/
+/*display: block;*/
+/*position: fixed;*/
+/*top: 2px;*/
+/*}*/
 
 #nav1 {
  width: 50%;
@@ -224,7 +226,7 @@ height: auto;
     <h1>Bain Communications</h1>
  </div>
 <header id="myHeader">
-<div class="triangle"><i class="fa fa-play"></i></div>
+<div id="bar" class="triangle"><i class="fa fa-bars"></i></div>
     <div class="logo">
         <img src="../images/bainLogo91.png" alt="logo"/>
    </div>
@@ -275,14 +277,49 @@ if (page !== "") {
     changeBackgroundColor(".dropdown-content", "#303035");
 -    changeColor(".dropbtn", "#46464a");
     changeColor(".dropbtn i", "#46464a");
-    changeColor(".triangle", "#46464a");
     dropdown_content.style.border = "grey 1px solid";
     dropdown_content.style.borderTop = "none";
-    document.querySelector(".nav-link").style.border = "none";
     document.querySelector(".photo_Background").style.display = "none";
 } else {
    myFunc();
 }
+
+const x = window.matchMedia("(max-width: 801px)");
+if(x.matches) {
+    function funcChange(){
+    document.addEventListener('click', function handleClickOutsideBox(event) {
+        const bar = document.querySelector('#bar');
+        const header = document.querySelector("header");
+
+        if (!bar.contains(event.target)) {
+            header.style.display = 'block';
+            header.style.position = 'fixed';
+            header.style.left = '-30%';
+            header.style.top = '0px';
+            header.style.paddingRight = '20%';
+            header.style.width = '40%';
+            header.style.borderRight = 'solid #F8F8F8 4px';
+            header.style.height = '100%';
+
+        } else {
+            header.style.padding = "0px";
+            header.style.left = "0px";
+
+        }
+    });
+}
+}
+else{
+    const header2= document.querySelector("header").style;
+    header2.justifContent='space-around';
+    header2.alignItems="center";
+    header2.display= "flex";
+    header2.backgroundColor= "#46464a";
+    header2.height= "60px";
+    header2.zIndex= "1";
+}
+funcChange();
+window.addEventListener('resize', funcChange);
 
 function myFunc() {
     const x = window.matchMedia("(min-width: 801px)");
@@ -294,7 +331,7 @@ function myFunc() {
         }
     }
     myFunction2();
-    x.addEventListener("change", myFunction2);
+    x.addEventListener("resize", myFunction2);
 }
 
 function changeBackgroundColor(tag, color) {
