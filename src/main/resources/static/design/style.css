@@ -14,10 +14,12 @@ a:hover {
     background-color: red;
 }
 
-body {
+html, body, article {
     background-color: #F8F8F8;
-    width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
+
+
 }
 
 h3 {
