@@ -54,7 +54,7 @@ top: 5%;
 font-size: 6vw;
 color: cornflowerblue;
 }
-span, a, .description{
+span, a, .description {
 font-size: 1em;
 }
 header {
@@ -159,7 +159,7 @@ height: auto;
  .photo_Background h1 {
     padding-top: 100px;
     color: #FBFBFB;
-    font-size: 5vw;
+    font-size: 8vw;
     padding-bottom: 10%;
     font-max-size: 4rem;
     font-weight: bolder;
