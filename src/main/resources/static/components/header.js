@@ -59,10 +59,11 @@ font-size: 1em;
 }
 header {
 display: block;
-overflow: auto;
+overflow-y: auto;
 position: fixed;
 left: -30%;
 top:0;
+
 padding-right: 20%;
 width: 40%;
 border-right: solid #F8F8F8 4px;
