@@ -48,7 +48,6 @@ class Footer extends HTMLElement {
 
 customElements.define('footer-component', Footer);
 if (page !== "") {
-    changeColor("li a", "#46464a");
-    changeBackgroundColor("#myFooter","#6A6A75" )
-
+    changeColor("a", "#46464a");
+    changeBackgroundColor("#myFooter","#6A6A75" );
 }

@@ -47,24 +47,23 @@ display: none;
 @media screen and (max-width: 800px){
 .triangle{
 position: absolute;
-right: 0;
+right: 5%;
 display: inline-block;
-margin-right: 20px;
 bottom: 45%;
-} .triangle {
-font-size: 4em;
+} 
+.triangle {
+font-size: 6vw;
 color: #6A6A75;
 }
 header {
 display: block;
 
 position: fixed;
-left: -13em;
+left: -30%;
 top:0;
-padding-right:150px;
-width: 20em;
+padding-right: 20%;
+width: 40%;
 border-right: solid #F8F8F8 4px;
-min-width: 300px;
   transition: left 1s linear 3.4ms;
 
 height: 100%;
@@ -76,7 +75,7 @@ padding: 0;
 left: 0;
 }
 article, footer, .photo_Background:not(header){
-    margin-left: 6.280em;
+    margin-left: 12.56%;
 }
 
 header .logo{ margin: auto;
@@ -104,12 +103,9 @@ padding:
 float: none;
 }
 
+
 }
 
-a:active {
-    color: yellow;
-    background-color: transparent;
-}
  .logo img{
    width: 100%; 
 
@@ -137,21 +133,14 @@ li a {
     text-align: center;
     padding: 14px 30px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     display: inline;
     font-weight: bold;
 }
 
 
 
-a:hover {
-    color: #AEADB2;
-    background-color: transparent;
-}
-a:active {
-    color: yellow;
-    background-color: transparent;
-}
+
 
 .sticky {
     position: fixed;
@@ -159,9 +148,8 @@ a:active {
     width: 100%;
 }
 .photo_Background {
-display: flex;
-flex-wrap: wrap;
-    height: 300px;
+display: block;
+height: auto;
     background-image: url(../images/TVPhoto/tvphoto6.jpg);
     background-position: center;
     justify-content: center;
@@ -169,7 +157,9 @@ flex-wrap: wrap;
  .photo_Background h1 {
     padding-top: 100px;
     color: #FBFBFB;
-    font-size: 4rem;
+    font-size: 5vw;
+    padding-bottom: 10%;
+    font-max-size: 4rem;
     font-weight: bolder;
     text-shadow: 5px 5px 10px black;
      text-align: center;
@@ -187,7 +177,7 @@ flex-wrap: wrap;
   background-color: transparent;
   color: #6A6874;
   padding: 16px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   border: none;
   display: inline;
@@ -271,47 +261,51 @@ function myFunction() {
     }
 }
 
-var path = window.location.pathname;
-var page = path.split("/").pop();
+const path = window.location.pathname;
+const page = path.split("/").pop();
 
 if (page !== "") {
+    document.querySelector(".nav-link").style.border = "none";
+    document.querySelector(".photo_Background").style.display = "none";
     let head_nav = document.querySelector("#myHeader");
     let dropdown_content = document.querySelector(".dropdown-content");
-    head_nav.style.borderBottom = "grey 1px solid";
+    head_nav.style.borderBottom = "black 1px solid";
 
-changeBackgroundColor("#myHeader", "#6A6A75");
+    changeBackgroundColor("#myHeader", "#6A6A75");
     changeBackgroundColor(".dropdown-content", "#303035");
-    changeColor("li a", "#46464a");
-    changeColor(".dropbtn", "#46464a");
+-    changeColor(".dropbtn", "#46464a");
     changeColor(".dropbtn i", "#46464a");
     changeColor(".triangle", "#46464a");
-
-
-
     dropdown_content.style.border = "grey 1px solid";
     dropdown_content.style.borderTop = "none";
-    document.querySelector("#myFooter").style.backgroundColor = "#6A6A75";
-
     document.querySelector(".nav-link").style.border = "none";
-
     document.querySelector(".photo_Background").style.display = "none";
-
 } else {
-    if (window.onresize > 600) {
-        window.onscroll = function () {
-            myFunction()
-        };
-    }
+   myFunc();
 }
 
-function changeBackgroundColor(tag, color){
-   const nodeList= document.querySelectorAll(tag);
+function myFunc() {
+    const x = window.matchMedia("(min-width: 801px)");
+    function myFunction2() {
+        if (x.matches) {
+            window.onscroll = function () {
+                myFunction()
+            };
+        }
+    }
+    myFunction2();
+    x.addEventListener("change", myFunction2);
+}
+
+function changeBackgroundColor(tag, color) {
+    const nodeList = document.querySelectorAll(tag);
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.backgroundColor = color;
     }
 }
-function changeColor(tag, color){
-    const nodeList= document.querySelectorAll(tag);
+
+function changeColor(tag, color) {
+    const nodeList = document.querySelectorAll(tag);
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.color = color;
     }
