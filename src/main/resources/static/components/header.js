@@ -59,14 +59,14 @@ font-size: 1em;
 }
 header {
 display: block;
-overflow: scroll;
+overflow: auto;
 position: fixed;
 left: -30%;
 top:0;
 padding-right: 20%;
 width: 40%;
 border-right: solid #F8F8F8 4px;
-  transition: left 780ms linear 3.4ms;
+  transition: left 680ms linear 3.4ms;
 
 height: 100%;
 
@@ -300,8 +300,10 @@ if(x.matches) {
             header.style.width = '40%';
             header.style.borderRight = 'solid #F8F8F8 4px';
             header.style.height = '100%';
-
+            document.querySelector(".triangle").style.display="inline-block";
         } else {
+            document.querySelector(".triangle").style.display="none";
+
             header.style.padding = "0px";
             header.style.left = "0px";
 
