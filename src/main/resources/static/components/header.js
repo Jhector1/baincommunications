@@ -30,7 +30,7 @@ align-items: center;
     list-style-type: none;
     display: flex;
     align-items: center;
-width: 650px;
+width: 550px;
 height: auto;
     right: 50px;
 }
@@ -50,13 +50,15 @@ right: 5%;
 display: inline-block;
 top: 5%;
 } 
+li a, .dropbtn {
+font-size: 16px;
+font-weight: normal;
+}
 .triangle {
 font-size: 6vw;
 color: cornflowerblue;
 }
-span, a, .description {
-font-size: 1em;
-}
+
 header {
 display: block;
 overflow-y: auto;
@@ -207,7 +209,7 @@ height: auto;
   display: block;
 }
 
-.dropdown-content a:hover {color: #AEADB2;
+.dropdown-content a:hover {color: cornflowerblue;
     background-color: transparent;}
  
 
@@ -217,7 +219,7 @@ height: auto;
 }
 
 .dropdown:hover .dropbtn {
-  color: #AEADB2;
+  color: cornflowerblue;
     background-color: transparent;
 }
 
