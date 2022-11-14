@@ -59,14 +59,14 @@ font-size: 1em;
 }
 header {
 display: block;
-
+overflow: scroll;
 position: fixed;
 left: -30%;
 top:0;
 padding-right: 20%;
 width: 40%;
 border-right: solid #F8F8F8 4px;
-  transition: left 1s linear 3.4ms;
+  transition: left 780ms linear 3.4ms;
 
 height: 100%;
 
