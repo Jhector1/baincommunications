@@ -50,8 +50,8 @@ right: 5%;
 display: inline-block;
 top: 5%;
 } 
-li a, .dropbtn {
-font-size: 16px;
+a, .dropbtn,.dropbtn i {
+font-size: 1rem !important;
 font-weight: normal;
 }
 .triangle {
@@ -196,8 +196,6 @@ height: auto;
   position: absolute;
   background-color: #46464a;
   min-width: 160px;
-  border: blue 4px solid;
-  border-top: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -293,6 +291,7 @@ if(x.matches) {
     document.addEventListener('click', function handleClickOutsideBox(event) {
         const bar = document.querySelector('#bar');
         const header = document.querySelector("header");
+        const dropdown= document.querySelector('.dropbtn');
 
         if (!bar.contains(event.target)) {
             header.style.display = 'block';

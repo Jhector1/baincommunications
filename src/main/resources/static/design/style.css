@@ -70,7 +70,6 @@ h4 {
 }
 
 img {
-    padding-top: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -121,7 +120,7 @@ p.description {
         flex-wrap: wrap;
     }
     p.description , span, .contact li, .link li {
-        font-size: 1em;
+        font-size: 1em !important;
     }
      .brand-work-with li {
         display: block;
@@ -152,9 +151,11 @@ width: 80%;
     width: 500px;
     box-shadow: 20px 20px 50px 15px grey;
     border-radius: 20px;
-    height: 500px;
+    height: auto;
     background-color: white;
     min-width: 300px;
+    padding-bottom: 5%;
+    padding-top: 5%;
     margin: 7px ;
 }
 
