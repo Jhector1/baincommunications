@@ -207,18 +207,11 @@ height: auto;
   display: block;
 }
 
-.dropdown-content a:hover {color: cornflowerblue;
-    background-color: transparent;}
  
 
 .dropdown:hover .dropdown-content, .dropdown-content li {
   display: grid;
   
-}
-
-.dropdown:hover .dropbtn {
-  color: cornflowerblue;
-    background-color: transparent;
 }
 
 </style><title></title></head>

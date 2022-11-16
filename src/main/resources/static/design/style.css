@@ -5,8 +5,9 @@
     font-family: Calibri, serif;
 
 }
-a:hover {
-    color: cornflowerblue;
+
+a:hover, .dropdown:hover .dropbtn, .dropdown:hover i{
+    color: cornflowerblue !important;
     background-color: transparent;
 }
 
