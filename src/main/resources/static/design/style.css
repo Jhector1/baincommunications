@@ -120,7 +120,7 @@ p.description {
         flex-wrap: wrap;
     }
     p.description , span, .contact li, .link li {
-        font-size: 1em !important;
+        font-size: 1rem !important;
     }
      .brand-work-with li {
         display: block;
