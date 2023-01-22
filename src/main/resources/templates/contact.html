@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel = "icon" href =
+            "http://localhost:8080/images/bainLogo91.png"
+          type = "image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/design/style.css}">
+    <p class="try"></p>
 
     <title>Home | Bain Communications</title>
-    <script th:src="@{/components/header.js}" type="text/javascript" defer></script>
-    <script th:src="@{/components/footer.js}" type="text/javascript" defer></script>
-
-
+    <script th:src="@{/components/header.js}" type="module" defer></script>
+    <script th:src="@{/components/footer.js}" type="module" defer></script>
+    <script th:src="@{/components/main.js}" type="module" defer></script>
 </head>
 
 <body>
 <header-component>
 </header-component>
+<!--<form method="post" action="/reserve">-->
+<!--    <label>First Name:-->
+<!--        <input name="firstName" type="text"/>-->
+<!--    </label>-->
+<!--    <label>Last Name:-->
+<!--        <input name="lastName" type="text"/>-->
+<!--    </label>-->
+<!--<input type="submit" value="Submit">-->
+<!--</form>-->
 <article>
-
-
+    <calendar-component></calendar-component>
 </article>
 <footer-component></footer-component>
 </body>
+
 </html>

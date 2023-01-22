@@ -1,3 +1,4 @@
+import {changeBackgroundColor,changeColor, page} from "./helperMethod.js";
 class Header extends HTMLElement {
     constructor() {
         super();
@@ -17,14 +18,7 @@ align-items: center;
     background-color: #46464a;
     height: 60px;
     z-index: 1;
-
-
 }
-/*#bar{*/
-/*font-size: 2em;*/
-/* margin: 5px;*/
-/* display: none;*/
-/*}*/
 
  .nav-link{
     list-style-type: none;
@@ -34,7 +28,6 @@ width: 550px;
 height: auto;
     right: 50px;
 }
-
 
 .logo{
 width: 60px;
@@ -69,16 +62,13 @@ top:0;
 padding-right: 20%;
 width: 40%;
 border-right: solid #F8F8F8 4px;
-  transition: left 680ms linear 3.4ms;
+  transition: left 250ms linear 3.4ms;
 
 height: 100%;
 
 
 }
-/*.triangle:hover{*/
-/*padding: 0;*/
-/*left: 0;*/
-/*}*/
+
 article, footer, .photo_Background:not(header){
     margin-left: 12.56%;
 }
@@ -88,11 +78,6 @@ width: 80%;
 height: auto;
 
 }
-/*#bar{*/
-/*display: block;*/
-/*position: fixed;*/
-/*top: 2px;*/
-/*}*/
 
 #nav1 {
  width: 50%;
@@ -104,7 +89,6 @@ height: auto;
  .nav-link li {
  width: 100%;
 display: block;
-padding: 
 float: none;
 }
 
@@ -121,13 +105,7 @@ width: 650px;
 height: 60px;
 list-style-type: none;
 }
-/*.nav-link li {*/
 
-/*    float: left;*/
-/*    */
-
-
-/*}*/
 
 li {
     border-right: none;
@@ -171,17 +149,11 @@ height: auto;
     background-position: center;
 }
 
-
-
- /*.photo_Background h1{*/
- /*   font-size: 60px;*/
- /*}*/
-
-/*dropdown styling section*/
 .dropbtn {
   background-color: transparent;
   color: #6A6874;
   padding: 16px;
+
   font-size: 1.25rem;
   font-weight: bold;
   border: none;
@@ -189,6 +161,10 @@ height: auto;
   cursor: pointer;
 }
 
+.dropbtn i{
+  transition: rotate 480ms linear 3.4ms;
+
+}
 
 
 .dropdown-content {
@@ -207,7 +183,9 @@ height: auto;
   display: block;
 }
 
- 
+ .triangle:hover{
+ cursor: pointer;
+ }
 
 .dropdown:hover .dropdown-content, .dropdown-content li {
   display: grid;
@@ -222,7 +200,7 @@ height: auto;
 <header id="myHeader">
 <div id="bar" class="triangle"><i class="fa fa-bars"></i></div>
     <div class="logo">
-        <img src="../images/bainLogo91.png" alt="logo"/>
+       <a href="/"><img src="../images/bainLogo91.png" alt="log" /o></a> 
    </div>
     <ul class="nav-link" id="nav1">
         <li class="li-nav"><a href="/">Home</a></li>
@@ -246,92 +224,84 @@ height: auto;
 }
 
 customElements.define('header-component', Header);
-let header = document.getElementById("myHeader");
-let sticky = header.offsetTop;
 
-function myFunction() {
+function headerReachTop() {
+    const header = document.querySelector("#myHeader");
+    const sticky = header.offsetTop;
     if (window.scrollY > sticky) {
         header.classList.add("sticky");
     } else {
         header.classList.remove("sticky");
     }
 }
-
-const path = window.location.pathname;
-const page = path.split("/").pop();
-
-if (page !== "") {
-    document.querySelector(".nav-link").style.border = "none";
-    document.querySelector(".photo_Background").style.display = "none";
-    let head_nav = document.querySelector("#myHeader");
-    let dropdown_content = document.querySelector(".dropdown-content");
-    head_nav.style.borderBottom = "black 1px solid";
-
-    changeBackgroundColor("#myHeader", "#6A6A75");
-    changeBackgroundColor(".dropdown-content", "#303035");
--    changeColor(".dropbtn", "#46464a");
-    changeColor(".dropbtn i", "#46464a");
-    dropdown_content.style.border = "grey 1px solid";
-    dropdown_content.style.borderTop = "none";
-    document.querySelector(".photo_Background").style.display = "none";
-} else {
-   myFunc();
-}
-
-const x = window.matchMedia("(max-width: 801px)");
-if(x.matches) {
-    function funcChange(){
-    document.addEventListener('click', function handleClickOutsideBox(event) {
-        const bar = document.querySelector('#bar');
-        const header = document.querySelector("header");
-        const dropdown= document.querySelector('.dropbtn');
-
-        if (!bar.contains(event.target)) {
-            header.style.display = 'block';
-            header.style.position = 'fixed';
-            header.style.left = '-30%';
-            header.style.top = '0px';
-            header.style.paddingRight = '20%';
-            header.style.width = '40%';
-            header.style.borderRight = 'solid #F8F8F8 4px';
-            header.style.height = '100%';
-            document.querySelector(".triangle").style.display="inline-block";
-        } else {
-            document.querySelector(".triangle").style.display="none";
-
-            header.style.padding = "0px";
-            header.style.left = "0px";
-
-        }
-    });
-}
-}
-funcChange();
-window.addEventListener('resize', funcChange);
-
-function myFunc() {
+function whenWindowWidthLessThan800Px() {
     const x = window.matchMedia("(min-width: 801px)");
-    function myFunction2() {
+    function stickHeader() {
         if (x.matches) {
             window.onscroll = function () {
-                myFunction()
+                headerReachTop();
             };
         }
     }
-    myFunction2();
-    x.addEventListener("resize", myFunction2);
+    stickHeader();
+    x.addEventListener("resize", stickHeader);
 }
+const changeHeaderStyle =()=> {
 
-function changeBackgroundColor(tag, color) {
-    const nodeList = document.querySelectorAll(tag);
-    for (let i = 0; i < nodeList.length; i++) {
-        nodeList[i].style.backgroundColor = color;
+    if (page !== "") {
+        document.querySelector(".nav-link").style.border = "none";
+        document.querySelector(".photo_Background").style.display = "none";
+        const head_nav = document.querySelector("#myHeader");
+        const dropdown_content = document.querySelector(".dropdown-content");
+        head_nav.style.borderBottom = "black 1px solid";
+
+        changeBackgroundColor("#myHeader", "#6A6A75");
+        changeBackgroundColor(".dropdown-content", "#303035");
+        changeColor(".dropbtn", "#46464a");
+        changeColor(".dropbtn i", "#46464a");
+        dropdown_content.style.border = "grey 1px solid";
+        dropdown_content.style.borderTop = "none";
+        document.querySelector(".photo_Background").style.display = "none";
+        whenWindowWidthLessThan800Px();
+
     }
 }
+whenWindowWidthLessThan800Px();
+changeHeaderStyle();
+const changeHeaderPosition=()=> {
+    const x = window.matchMedia("(max-width: 801px)");
+    const bar = document.querySelector('#bar');
+    const header = document.querySelector("header");
+    if (x.matches) {
 
-function changeColor(tag, color) {
-    const nodeList = document.querySelectorAll(tag);
-    for (let i = 0; i < nodeList.length; i++) {
-        nodeList[i].style.color = color;
+        function changeHeaderLayout() {
+            document.addEventListener('click', (event)=> {
+
+                if (!bar.contains(event.target)) {
+                    header.style.display = 'block';
+                    header.style.position = 'fixed';
+                    header.style.left = '-30%';
+                    header.style.top = '0px';
+                    header.style.paddingRight = '20%';
+                    header.style.width = '40%';
+                    header.style.borderRight = 'solid #F8F8F8 4px';
+                    header.style.height = '100%';
+                    document.querySelector(".triangle").style.display = "inline-block";
+                } else {
+                    document.querySelector(".triangle").style.display = "none";
+
+                    header.style.padding = "0px";
+                    header.style.left = "0px";
+
+                }
+            });
+        }
+        changeHeaderLayout();
     }
+
+
 }
+
+
+changeHeaderPosition();
+window.addEventListener('resize', ()=>changeHeaderPosition());

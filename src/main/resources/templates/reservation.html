@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel = "icon" href =
+            "http://localhost:8080/images/bainLogo91.png"
+          type = "image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/design/style.css}">
 
 
     <meta charset="UTF-8">
     <title>Reservation | Bain Communications</title>
-    <script th:src="@{/components/header.js}" type="text/javascript" defer></script>
-    <script th:src="@{/components/footer.js}" type="text/javascript" defer></script>
+    <script th:src="@{/components/header.js}" type="module" defer></script>
+    <script th:src="@{/components/footer.js}" type="module" defer></script>
 
 </head>
 <body>
@@ -66,51 +69,6 @@
                 </div>
             </div>
         </div>
-        <!--        <div class="reservation-2">-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="firstname2">First Name: </label>-->
-        <!--                <input class="input-field" id="firstname2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="lastname2">Last Name: </label>-->
-        <!--                <input class="input-field" id="lastname2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="address2">Address: </label>-->
-        <!--                <input class="input-field" id="address2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="city2">City: </label>-->
-        <!--                <input class="input-field" id="city2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="state2">Sttjttjjttjtate: </label>-->
-        <!--                <input class="input-field" id="state2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="zip2">Zip: </label>-->
-        <!--                <input class="input-field" id="zip2" type="text"/>-->
-        <!--            </div>-->
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="date2">Pick a date</label>-->
-        <!--                <input th:field="*{date}" id="date2" type="date"/>-->
-        <!--            </div>-->
-
-        <!--            <div class="reservation-form">-->
-        <!--                <label for="time2">Select a time:</label>-->
-        <!--                <input type="time" id="time2" th:field="*{time}"/>-->
-        <!--            </div>-->
-        <!--            <br>-->
-        <!--            <div class="reservation-form"><label>Choose the services you need</label><br>-->
-        <!--                <div th:each="service : ${allServices}">-->
-
-        <!--                    <input id="services2" th:field="*{serviceList}" type="checkbox"-->
-        <!--                           th:value="${service}"/>-->
-
-        <!--                    <label th:text="${service}">SERVICE</label>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
         <div class="btn"><input type="submit" value="Reserve"/></div>
     </div >
 

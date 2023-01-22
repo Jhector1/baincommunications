@@ -4,12 +4,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel = "icon" href =
+            "http://localhost:8080/images/bainLogo91.png"
+          type = "image/x-icon">
     <link rel="stylesheet" th:href="@{/design/style.css}" type="text/css">
-    <title>Home | Bain Communications</title>
+    <title>  Home | Bain Communications</title>
     <link rel="stylesheet" href="../static/design/style.css">
-    <script th:src="@{/components/header.js}" type="text/javascript" defer></script>
-    <script th:src="@{/components/footer.js}" type="text/javascript" defer></script>
+    <script th:src="@{/components/header.js}" type="module" defer></script>
+    <script th:src="@{/components/footer.js}" type="module" defer></script>
+    <script th:src="@{/components/main.js}" type="module" defer></script>
 
 </head>
 
@@ -19,7 +22,6 @@
 <header-component>
 
 </header-component>
-
 <article>
     <h2>Power Your Home With Smart Technology</h2>
     <h3>Cut Through The Confusion With The Help Of Our Friendly, Experienced Team Members</h3>
@@ -68,10 +70,10 @@
             <span>Learn More</span>
         </div>
     </div>
+    <calendar-component></calendar-component>
 </article>
 
 <footer-component></footer-component>
-
 </body>
 
 
