@@ -20,13 +20,13 @@ import java.util.Map;
 @SessionAttributes("reservation")
 @RequestMapping("/reserve")
 public class ReservationController {
-     private EmailSenderService senderService;
+    private final EmailSenderService senderService;
     private final PhoneConsultationRepository phoneConsultationRepository;
     private final HomeConsultationRepository homeConsultationRepository;
 
 
-    public ReservationController( PhoneConsultationRepository phoneConsultationRepository, HomeConsultationRepository homeConsultationRepository) {
-       // this.senderService = senderService;
+    public ReservationController(EmailSenderService senderService, PhoneConsultationRepository phoneConsultationRepository, HomeConsultationRepository homeConsultationRepository) {
+        this.senderService = senderService;
         this.phoneConsultationRepository = phoneConsultationRepository;
         this.homeConsultationRepository = homeConsultationRepository;
     }
@@ -40,10 +40,10 @@ public class ReservationController {
     public Reservation rsv() {
         return new Reservation();
     }
-    @Bean
-    JavaMailSenderImpl getJavaMail(){
-        return new JavaMailSenderImpl();
-}
+//    @Bean
+//    JavaMailSenderImpl getJavaMail(){
+//        return new JavaMailSenderImpl();
+//}
 
     @ModelAttribute(name = "allServices")
     public List<String> listServices() {
