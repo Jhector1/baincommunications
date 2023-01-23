@@ -13,6 +13,8 @@ class PrintCalendar extends HTMLElement {
 </style><title></title>
 </head>
 <body> 
+<div class="cover">
+<div class="pop-pup">
 <div class="envelope">      
     <div class="exit-button-box">
         <div class="logo">
@@ -170,7 +172,15 @@ class PrintCalendar extends HTMLElement {
              <div class="submit-button"><input type="submit" value="Submit"/></div>
         </div>
     </form>
-    </div> 
+    </div>
+    </div>
+     </div>
+     
+    <div class="alert-thank-you">Success!<br>
+    Thank you for reaching to Bain Communication.
+     We are here to serve you. One of our workers
+      will contact you soon.<br>
+      <button><strong>OK</strong></button></div>
 </body>
     `;
     }
