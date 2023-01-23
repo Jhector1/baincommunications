@@ -208,11 +208,11 @@ height: auto;
         <li class="dropdown">
             <span  style="z-index: 3; " class="dropbtn"> Services<i style='padding-left:10px' class='fa fa-chevron-down'></i></span>
             <ul class="dropdown-content">
-                 <li class="li-nav"><a href="#">Phone Consultation</a></li>
-                 <li class="li-nav"><a href="/reserve">Home Consultation</a></li>
+                 <li class="li-nav"><a href="/phoneConsultation">Phone Consultation</a></li>
+                 <li class="li-nav"><a href="/homeConsultation">Home Consultation</a></li>
             </ul>
         </li>
-        <li class="li-nav"><a href="#">Reviews</a></li>
+        <li class="li-nav"><a href="/reviews">Reviews</a></li>
         <li class="li-nav"><a href="/contact">Contact</a></li>
     </ul>
     

@@ -31,10 +31,7 @@ public class ReservationController {
         this.homeConsultationRepository = homeConsultationRepository;
     }
 
-    @GetMapping
-    public String reservationPage() {
-        return "home";
-    }
+
 
     @ModelAttribute(name = "reservation")
     public Reservation rsv() {

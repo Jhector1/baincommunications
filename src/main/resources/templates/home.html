@@ -4,11 +4,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" href =
+    <link rel="icon" href=
             "http://localhost:8080/images/bainLogo91.png"
-          type = "image/x-icon">
+          type="image/x-icon">
     <link rel="stylesheet" th:href="@{/design/style.css}" type="text/css">
-    <title>  Home | Bain Communications</title>
+    <title> Home | Bain Communications</title>
     <link rel="stylesheet" href="../static/design/style.css">
     <script th:src="@{/components/header.js}" type="module" defer></script>
     <script th:src="@{/components/footer.js}" type="module" defer></script>
@@ -30,7 +30,8 @@
         will
         guide you to the best Smart<br> Home for your budget. With so many choices for smart home devices on the market,
         there
-        are endless ways to make your home more efficient and <br>secure. The professionals at Bain Communications can install a
+        are endless ways to make your home more efficient and <br>secure. The professionals at Bain Communications can
+        install a
         custom
         home automation system so that you can enjoy the smart home you’ve always dreamed of <br>. We ensure that your
         system is
@@ -41,7 +42,7 @@
             <img th:src="@{/images/TVPhoto/tvphoto20.jpg}" alt="tvphoto20"/>
             <h4>Home Theather/Audio</h4>
             <p class="description">Watch the big game in your very own theater room.<br></p>
-            <span>Learn More</span>
+            <span class="redirect-link"><a href="/theater_audio">Learn More</a></span>
         </div>
         <div class="block-pic" id="block-a2">
 
@@ -50,27 +51,26 @@
             <p class="description">Control your house from your smartphone,<br>
                 smart device, or through voice control
             </p>
-            <span>Learn More</span>
+            <span class="redirect-link"><a href="/automation">Learn More</a></span>
         </div>
-        </div>
+    </div>
     <div class=" block">
         <div class="block-pic" id="block-b1">
 
             <img th:src="@{/images/TVPhoto/tvphoto22.jpg}"/>
             <h4>Lighting/Window Treatment</h4>
             <p class="description">Schedule your blinds to close at sundown.<br></p>
-            <span>Learn More</span>
+            <span class="redirect-link"><a href="/windowTreatment">Learn More</a></span>
         </div>
-
         <div class="block-pic" id="block-b2">
 
             <img th:src="@{/images/TVPhoto/tvphoto3.jpg}"/>
             <h4>Surveillance/Network</h4>
             <p class="description">Keep your family safe with high-tech home security.</p>
-            <span>Learn More</span>
+            <span class="redirect-link"><a href="/network_surveillance">Learn More</a></span>
         </div>
+        <calendar-component></calendar-component>
     </div>
-    <calendar-component></calendar-component>
 </article>
 
 <footer-component></footer-component>

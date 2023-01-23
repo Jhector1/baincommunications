@@ -1,6 +1,6 @@
 import {CalendarPage} from "./calendarImpl.js";
 //import {CalendarController} from "./calendar.js";
-import {calendarComponent, NavigateButton, timeOnClick, hideTimeReserved} from "./helperMethod.js";
+import {calendarComponent, NavigateButton, timeObject, hideTimeReserved} from "./helperMethod.js";
 
 class PrintCalendar extends HTMLElement {
     constructor() {
@@ -123,7 +123,7 @@ class PrintCalendar extends HTMLElement {
                     <p class="time-of-day"> <strong>Morning</strong></p>
                     <div class="time-box">
                         <label for="time-input1" class="available-time"><i></i>10:00 am<input class="time-input" name="time" id="time-input1" type="radio" value="10:00 am" readonly/></label>
-                        <label for="time-input2"class="available-time am-shift"><i></i>10:30 am<input class="time-input" name="time" id="time-input2" type="radio" value="10:30 am" readonly/></label>
+                        <label for="time-input2" class="available-time am-shift"><i></i>10:30 am<input class="time-input" name="time" id="time-input2" type="radio" value="10:30 am" readonly/></label>
                         <label for="time-input3" class="available-time"><i></i>11:00 am<input class="time-input" name="time" id="time-input3" type="radio" value="11:00 am" readonly/></label>
                         <label for="time-input4" class="available-time am-shift"><i></i>11:30 am<input class="time-input" name="time" id="time-input4" type="radio" value="11:30 am" readonly/></label>
                     </div>
@@ -147,19 +147,19 @@ class PrintCalendar extends HTMLElement {
             <div class="user-info-contact-box">
                 
                 <div class="user-contact-box-1">
-                    <div class="user-contact"><input class="input-contact"  id="firstName" type="text" name="firstName" placeholder="First Name"/></div>
-                    <div class="user-contact"><input class="input-contact"   id="lastName" type="text" name="lastName" placeholder="Last Name"/></div>
-                    <div class="user-contact"><input class="input-contact"  id="email" type="email" name="email" placeholder="youremail@example.com"/></div>
-                    <div class="user-contact"><input class="input-contact"  id="tel" type="tel" name="tel" placeholder="Phone Number"/></div>
+                    <div class="user-contact contact-a"><input class="input-contact"  id="firstName" type="text" name="firstName" placeholder="First Name"  required="required"/></div>
+                    <div class="user-contact"><input class="input-contact"   id="lastName" type="text" name="lastName" placeholder="Last Name" required="required"/></div>
+                    <div class="user-contact"><input class="input-contact"  id="email" type="email" name="email" placeholder="youremail@example.com" required="required"/></div>
+                    <div class="user-contact"><input class="input-contact"  id="tel" type="tel" name="tel" placeholder="Phone Number" required="required"/></div>
                     <div class="user-contact mes"><textarea class="input-contact"  id="comment" rows="9" cols="20" name="comment" placeholder="Appointment notes (optional)"></textarea></div>
                 </div>
                 <h1>Address</h1>
                 <div class="user-contact-box-2">
-                    <div class="user-contact same-line"><input class="input-contact" id="address" type="text" name="address" placeholder="Address"/></div>
+                    <div class="user-contact same-line"><input class="input-contact" id="address" type="text" name="address" placeholder="Address" required="required"/></div>
                     <div class="user-contact same-line"><input class="input-contact" id="apt-suite" type="text" name="apartment_number" placeholder="Apt/Suite"/></div>
-                    <div class="user-contact same-line"><input class="input-contact" id="city" type="text" name="city" placeholder="City"/></div>
-                    <div class="user-contact"><input class="input-contact" id="state" type="text" name="state" placeholder="State"/></div>
-                    <div class="user-contact"><input class="input-contact" id="zip" type="text" name="zip" placeholder="Zip Code"/></div>
+                    <div class="user-contact same-line"><input class="input-contact" id="city" type="text" name="city" placeholder="City" required="required"/></div>
+                    <div class="user-contact"><input class="input-contact" id="state" type="text" name="state" placeholder="State" required="required"/></div>
+                    <div class="user-contact"><input class="input-contact" id="zip" type="text" name="zip" placeholder="Zip Code" required="required"/></div>
                  </div>
          </div>
        </div>  
@@ -262,11 +262,18 @@ function backOnClick() {
 
 
 
-    document.querySelector(".continue").onclick = ()=>{if(calendarController1.getDateChecked()===true) {
-    continueOnClick();
-}else{
-    alert("You must choose a date to continue")
-}}
+    document.querySelector(".continue").onclick = ()=>{
+    if(array[navigateButton.current]===".calendar"){
+        if((calendarController1.getDateChecked()===true)&& (timeObject.timeChecked === true)) {
+            continueOnClick();
+        }else{
+            alert("You must choose a date and time to continue")
+        }
+    }
+    else{
+        continueOnClick();
+    }
+}
 document.querySelector(".back").onclick = backOnClick;
 
 function displayRadioValue() {
@@ -304,9 +311,33 @@ function displayRadioValue() {
         }
     }
 }
+timeObject.selected();
 
-timeOnClick();
 document.querySelector("#cancel-button").addEventListener('click', () => calendarComponent.style.display = "none");
 document.querySelector("#phone-consultation").onclick = displayRadioValue;
 document.querySelector("#home-consultation").onclick = displayRadioValue;
+
+function checkRequiredInput(obj) {
+    const textBox = document.querySelector(obj);
+    if (textBox.validity.valueMissing) {
+        alert("yea");
+        textBox.border = "1px red solid";
+        textBox.setCustomValidity(`Entering an ${textBox.placeholder} is necessary!`);
+    } else if (textBox.type.typeMismatch) {
+        textBox.setCustomValidity('Please enter an email address which is valid!');
+    } else {
+        textBox.setCustomValidity('');
+    }
+}
+
+function InvalidMsg(textbox) {
+
+    if (textbox.innerHTML === '') {
+        textbox.style.border="1px solid red";
+
+    }
+
+}
+document.querySelector(".submit-button input").addEventListener('click', ()=>InvalidMsg( document.querySelector(".user-contact")));
+
 

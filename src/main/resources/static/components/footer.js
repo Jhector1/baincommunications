@@ -40,8 +40,8 @@ class Footer extends HTMLElement {
             <li class="social-media">
                 <a href="#" class="fa fa-linkedin"></a>
                 <a href="#" class="fa fa-youtube"></a>
-                <a href="https://www.facebook.com/profile.php?id=726930617" class="fa fa-facebook" target="_blank" ></a>
-                <a href="https://www.instagram.com/christopher_bain/" class="fa fa-instagram" target="_blank"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
             </li>
         </ul>
     </div>

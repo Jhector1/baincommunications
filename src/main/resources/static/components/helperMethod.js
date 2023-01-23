@@ -27,21 +27,26 @@ function changeColor(tag, color) {
     }
 }
 
-function timeOnClick() {
-    const time = document.querySelectorAll(".time-input");
-    const time_div = document.querySelectorAll(".available-time");
+const timeObject = {
+    timeChecked: false,
 
-    const iElement = document.querySelectorAll(".available-time i");
+    selected() {
+        const time = document.querySelectorAll(".time-input");
+        const time_div = document.querySelectorAll(".available-time");
 
-    for (let t = 0; t < time.length; t++) {
-        time[t].addEventListener("click", () => {
-            for (let y = 0; y < iElement.length; y++) {
-                iElement[y].innerHTML = "";
-                time_div[y].style.backgroundColor = "cornflowerblue";
-            }
-            time_div[t].style.backgroundColor = '#6A6A75';
-            iElement[t].innerHTML = "&#10003;"
-        });
+        const iElement = document.querySelectorAll(".available-time i");
+
+        for (let t = 0; t < time.length; t++) {
+            time[t].addEventListener("click", () => {
+                for (let y = 0; y < iElement.length; y++) {
+                    iElement[y].innerHTML = "";
+                    time_div[y].style.backgroundColor = "cornflowerblue";
+                }
+                this.timeChecked=true;
+                time_div[t].style.backgroundColor = '#6A6A75';
+                iElement[t].innerHTML = "&#10003;"
+            });
+        }
     }
 }
 
@@ -51,7 +56,7 @@ function hideTimeReserved(date24, whichPath) {
         const obj = JSON.parse(data);
         const time = document.querySelectorAll(".available-time input");
         const label = document.querySelectorAll(".available-time");
-        for(let o = 0; o< label.length; o++){
+        for (let o = 0; o < label.length; o++) {
             label[o].style.display = "block";
 
         }
@@ -79,13 +84,12 @@ function hideTimeReserved(date24, whichPath) {
         }
 
 
-
         for (let y = 0; y < obj.length; y++) {
             for (let i = 0; i < time.length; i++) {
-                const dateSaved1= new Date(obj[y].date);
+                const dateSaved1 = new Date(obj[y].date);
 
-                const dateSaved= new Date(dateSaved1.getFullYear(), dateSaved1.getMonth());
-               dateSaved.setHours(0,0,0,0);
+                const dateSaved = new Date(dateSaved1.getFullYear(), dateSaved1.getMonth());
+                dateSaved.setHours(0, 0, 0, 0);
                 if (dateSaved.getTime() === date24.getTime()) {
                     console.log(`${dateSaved} === ${date24}`);
 
@@ -98,7 +102,7 @@ function hideTimeReserved(date24, whichPath) {
                     }
                 }
 
-             }
+            }
         }
     }
 
@@ -115,4 +119,4 @@ const calendarComponent = document.querySelector("calendar-component");
 
 
 export {NavigateButton};
-export {changeColor, changeBackgroundColor, page, calendarComponent, timeOnClick, hideTimeReserved};
+export {changeColor, changeBackgroundColor, page, calendarComponent, timeObject, hideTimeReserved};
