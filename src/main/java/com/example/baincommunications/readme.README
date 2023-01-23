@@ -1,0 +1,10 @@
+git remote add origin https://github.com/Jhector1/baincommunications.git
+git branch -M main
+git push -u origin main
+
+spring_profiles_active=prod
+PROD_DB_HOST=containers-us-west-62.railway.app
+PROD_DB_PORT=8032
+PROD_DB_NAME=railway
+PROD_DB_PASSWORD=WfBNQlvjthU5ttPWMjRw
+PROD_DB_USERNAME=root
