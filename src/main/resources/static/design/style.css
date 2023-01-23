@@ -311,8 +311,8 @@ position: relative;
 
 .form-envelope{
     border: 1px solid red; //#6A687461;
-    position: relative;
-    height: 450px;
+    position: sticky;
+    height: 455px;
     /*margin: auto;*/
     overflow-y: auto;
     overflow-x: hidden;
