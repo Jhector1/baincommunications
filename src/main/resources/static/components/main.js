@@ -12,7 +12,8 @@ class PrintCalendar extends HTMLElement {
 
 </style><title></title>
 </head>
-<body>        
+<body> 
+<div class="envelope">      
     <div class="exit-button-box">
         <div class="logo">
             <a href="/"><img src="../images/bainLogo91.png" alt="log"></a> 
@@ -169,6 +170,7 @@ class PrintCalendar extends HTMLElement {
              <div class="submit-button"><input type="submit" value="Submit"/></div>
         </div>
     </form>
+    </div> 
 </body>
     `;
     }
