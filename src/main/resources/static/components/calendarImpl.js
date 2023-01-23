@@ -37,6 +37,7 @@ function domObject(attribute) {
 
 class CalendarPage {
     constructor(year, month, day) {
+        this.dateChecked=false;
         this.year = year;
         this.day = day;
         this.month = month;
@@ -45,6 +46,12 @@ class CalendarPage {
 
     nextMonth() {
         this.month += 1
+    }
+    setDateChecked(yesOrNo){
+        this.dateChecked= yesOrNo;
+    }
+    getDateChecked(){
+        return this.dateChecked;
     }
 
     previousMonth() {
@@ -105,9 +112,12 @@ class CalendarPage {
                 this.displayCalendar(attribute[0], attribute[1], attribute[2]);
                 if (this.calendar.getCustomTime(this.year, this.month, date) > this.calendar.getCurrentTime()) {
                     document.querySelector("#date-value").value = new Date(this.year, this.month, date);
-
+this.setDateChecked(true);
                     this.displaySelectedDay(this.getDayOfTheMonth(attribute[0]), indexDate1);
 
+                }
+                else{
+                    this.setDateChecked(false);
                 }
 
 

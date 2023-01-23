@@ -261,7 +261,12 @@ function backOnClick() {
 }
 
 
-document.querySelector(".continue").onclick = continueOnClick;
+
+    document.querySelector(".continue").onclick = ()=>{if(calendarController1.getDateChecked()===true) {
+    continueOnClick();
+}else{
+    alert("You must choose a date to continue")
+}}
 document.querySelector(".back").onclick = backOnClick;
 
 function displayRadioValue() {
