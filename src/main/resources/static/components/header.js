@@ -64,7 +64,7 @@ width: 40%;
 border-right: solid #F8F8F8 4px;
   transition: left 250ms linear 3.4ms;
 
-height: 100%;
+height: 100vh;
 
 
 }

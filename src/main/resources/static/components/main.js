@@ -187,6 +187,7 @@ class PrintCalendar extends HTMLElement {
 }
 
 customElements.define('calendar-component', PrintCalendar);
+
 const todayDate = new Date();
 todayDate.setHours(0, 0, 0, 0);
 const calendarController1 = new CalendarPage(todayDate.getFullYear(), todayDate.getMonth(), todayDate.getDate());
@@ -271,16 +272,14 @@ function backOnClick() {
 }
 
 
-
-    document.querySelector(".continue").onclick = ()=>{
-    if(array[navigateButton.current]===".calendar"){
-        if((calendarController1.getDateChecked()===true)&& (timeObject.timeChecked === true)) {
+document.querySelector(".continue").onclick = () => {
+    if (array[navigateButton.current] === ".calendar") {
+        if ((calendarController1.getDateChecked() === true) && (timeObject.timeChecked === true)) {
             continueOnClick();
-        }else{
+        } else {
             alert("You must choose a date and time to continue")
         }
-    }
-    else{
+    } else {
         continueOnClick();
     }
 }
@@ -321,6 +320,7 @@ function displayRadioValue() {
         }
     }
 }
+
 timeObject.selected();
 
 document.querySelector("#cancel-button").addEventListener('click', () => calendarComponent.style.display = "none");
@@ -343,11 +343,19 @@ function checkRequiredInput(obj) {
 function InvalidMsg(textbox) {
 
     if (textbox.innerHTML === '') {
-        textbox.style.border="1px solid red";
+        textbox.style.border = "1px solid red";
 
     }
 
 }
-document.querySelector(".submit-button input").addEventListener('click', ()=>InvalidMsg( document.querySelector(".user-contact")));
 
+document.querySelector(".submit-button input").addEventListener('click', () => InvalidMsg(document.querySelector(".user-contact")));
 
+// (() => {
+//     const buttonSubmit = document.querySelector(".submit-button input");
+//     const alertThankYou = document.querySelector(".alert-thank-you");
+//     new Promise(displayAlert => displayAlert(buttonSubmit)).then(button => button.addEventListener('click',( )=> {
+//             document.querySelector(".pop-pup").style.display = "none"; alertThankYou.style.display = "block"
+//         }
+//     ))
+// })();
