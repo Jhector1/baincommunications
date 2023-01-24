@@ -114,7 +114,7 @@ class CalendarPage {
                     document.querySelector("#date-value").value = new Date(this.year, this.month, date);
 this.setDateChecked(true);
                     this.displaySelectedDay(this.getDayOfTheMonth(attribute[0]), indexDate1);
-
+location.href='#time-input15';
                 }
                 else{
                     this.setDateChecked(false);
