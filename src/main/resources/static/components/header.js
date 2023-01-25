@@ -288,15 +288,15 @@ const changeHeaderPosition=()=> {
             document.addEventListener('click', (event)=> {
 
                 if (!bar.contains(event.target)) {
-                    header.classList.add(".headerLess800px");
-                    // header.style.display = 'block';
-                    // header.style.position = 'fixed';
-                    // header.style.left = '-30%';
-                    // header.style.top = '0px';
-                    // header.style.paddingRight = '20%';
-                    // header.style.width = '40%';
-                    // header.style.borderRight = 'solid #F8F8F8 4px';
-                    // header.style.height = '100%';
+                    // header.classList.add("headerLess800px");
+                    header.style.display = 'block';
+                    header.style.position = 'fixed';
+                    header.style.left = '-30%';
+                    header.style.top = '0px';
+                    header.style.paddingRight = '20%';
+                    header.style.width = '40%';
+                    header.style.borderRight = 'solid #F8F8F8 4px';
+                    header.style.height = '100%';
                     document.querySelector(".triangle").style.display = "inline-block";
                 } else {
                     document.querySelector(".triangle").style.display = "none";
