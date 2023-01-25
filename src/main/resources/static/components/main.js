@@ -13,7 +13,8 @@ class PrintCalendar extends HTMLElement {
 </style><title></title>
 </head>
 <body> 
-<div class="cover">
+<div class="cover"><div></div><h3>Please wait.<br>Your request is being processed</h3></div>
+
 <div class="pop-pup">
 <div class="envelope">      
     <div class="exit-button-box">
@@ -52,9 +53,9 @@ class PrintCalendar extends HTMLElement {
                 <input type="checkbox" id="surveillance-network" name="service4" value="Surveillance Network">
                 <label for="service4">Surveillance Network</label><br><br>
             </div>
-            <div class="calendar">
+            <div id="check-date" class="calendar">
                 <div class="my-calendar">
-                    <ul class="month">
+                    <ul  class="month">
                         <li  id="prv" class="prev"><span>&#10094;</span></li>
                         <li>
                             <span class="month-of-year"></span>
@@ -62,7 +63,7 @@ class PrintCalendar extends HTMLElement {
                         </li>
                         <li id="nxt" class="next"><span>&#10095;</span></li>
                     </ul>
-                    <ul class="weekdays">
+                    <ul  class="weekdays">
                         <li>Su</li>
                         <li>Mo</li>
                         <li>Tu</li>
@@ -86,7 +87,7 @@ class PrintCalendar extends HTMLElement {
                         <li></li>
                         <li></li>
                         <li></li>
-                        <li></li>
+                        <li ></li>
                         <li></li>
                         <li></li>
                         <li></li>
@@ -165,7 +166,8 @@ class PrintCalendar extends HTMLElement {
                  </div>
          </div>
        </div>  
- 
+ <div class="loader"></div>
+
       <div class="back-continue">
              <div class="back" >Back</div>
              <div class="continue" >Continue</div>
@@ -174,13 +176,13 @@ class PrintCalendar extends HTMLElement {
     </form>
     </div>
     </div>
-     </div>
+     
      
     <div class="alert-thank-you">Success!<br>
-    Thank you for reaching to Bain Communication.
+    Thank you for reaching out to Bain Communications. Your quote has been submitted successfully.
      We are here to serve you. One of our workers
       will contact you soon.<br>
-      <button><strong>OK</strong></button></div>
+      <button><a href="/"><strong>OK</strong></a> </button></div>
 </body>
     `;
     }
@@ -276,7 +278,12 @@ document.querySelector(".continue").onclick = () => {
     if (array[navigateButton.current] === ".calendar") {
         if ((calendarController1.getDateChecked() === true) && (timeObject.timeChecked === true)) {
             continueOnClick();
-        } else {
+        }
+        else if(calendarController1.getDateChecked()===false) {
+            location.href="#check-date";
+            alert("choose a date to continue");
+        } else
+         {
             alert("You must choose a date and time to continue")
         }
     } else {
@@ -350,12 +357,34 @@ function InvalidMsg(textbox) {
 }
 
 document.querySelector(".submit-button input").addEventListener('click', () => InvalidMsg(document.querySelector(".user-contact")));
+(() => {
+    const buttonSubmit = document.querySelector("form");
+     buttonSubmit.onsubmit=()=>{
 
-// (() => {
-//     const buttonSubmit = document.querySelector(".submit-button input");
-//     const alertThankYou = document.querySelector(".alert-thank-you");
-//     new Promise(displayAlert => displayAlert(buttonSubmit)).then(button => button.addEventListener('click',( )=> {
-//             document.querySelector(".pop-pup").style.display = "none"; alertThankYou.style.display = "block"
-//         }
-//     ))
-// })();
+       }
+
+})();
+(() => {
+    const buttonSubmit = document.querySelector("form");
+    const alertThankYou = document.querySelector(".alert-thank-you");
+    new Promise(displayAlert => displayAlert(buttonSubmit)).then(button => button.addEventListener('submit',()=>{
+       // document.querySelector(".pop-pup").style.display="none";
+        const loader = document.querySelector(".cover");
+        loader.style.display= "flex";
+
+        setTimeout(() => {
+            document.querySelector(".pop-pup").style.display = "none";
+            alertThankYou.style.display = "block"
+        }, 10000)
+        }
+    ));
+})();
+
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loader--hidden");
+
+    loader.addEventListener("transitionend", () => {
+        document.body.removeChild(loader);
+    });
+});

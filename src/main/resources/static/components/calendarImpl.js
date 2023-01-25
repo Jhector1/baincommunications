@@ -130,12 +130,7 @@ location.href='#time-input15';
 
     }
 
-    previous(...attribute) {
-        this.previousMonth();
-        if (this.month < 0) {
-            this.previousYear();
-            this.setMonth(11);
-        }
+    hideTimeWhenReserved(){
         let ele = document.querySelectorAll('.choose-service');
         for (let t = 0; t < ele.length; t++) {
             if (ele[t].checked) {
@@ -151,6 +146,15 @@ location.href='#time-input15';
 
             }
         }
+    }
+
+    previous(...attribute) {
+        this.previousMonth();
+        if (this.month < 0) {
+            this.previousYear();
+            this.setMonth(11);
+        }
+     this.hideTimeWhenReserved();
         this.displayCalendar(attribute[0], attribute[1], attribute[2]);
     }
 
@@ -166,22 +170,7 @@ location.href='#time-input15';
         }
 
 
-        let ele = document.querySelectorAll('.choose-service');
-        for (let t = 0; t < ele.length; t++) {
-            if (ele[t].checked) {
-
-                if (ele[t].value === "Home Consultation") {
-                hideTimeReserved(new Date(this.year, this.month), "homedates");
-
-
-                } else {
-                    hideTimeReserved(new Date(this.year, this.month), "phonedates");
-
-                }
-
-            }
-        }
-
+        this.hideTimeWhenReserved();
         this.displayCalendar(attribute[0], attribute[1], attribute[2]);
 
 
