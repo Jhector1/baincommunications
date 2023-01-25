@@ -373,10 +373,12 @@ document.querySelector(".submit-button input").addEventListener('click', () => I
         loader.style.display= "flex";
 
         setTimeout(() => {
-           // document.body.removeChild(loader);
+            document.body.removeChild(loader);
+
             document.querySelector(".pop-pup").style.display = "none";
+
             alertThankYou.style.display = "block"
-        }, 7000)
+        }, 2000)
         }
     ));
 })();
