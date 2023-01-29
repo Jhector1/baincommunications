@@ -373,21 +373,31 @@ document.querySelector(".submit-button input").addEventListener('click', () => I
         loader.style.display= "flex";
 
         setTimeout(() => {
-            document.body.removeChild(loader);
+            loader.style.display = 'none';
+            //document.body.removeChild(loader);
 
             document.querySelector(".pop-pup").style.display = "none";
 
             alertThankYou.style.display = "block"
-        }, 2000)
+        }, 7000)
         }
     ));
 })();
 
 window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
-    loader.classList.add("loader--hidden");
+    const loader1 = document.querySelector(".loader");
+    loader1.classList.add("loader--hidden");
+    loader1.style.display="none";
 
-    loader.addEventListener("transitionend", () => {
-        document.body.removeChild(loader);
+    loader1.addEventListener("transitionend", () => {
+        alert("yeah");
+        document.body.removeChild(loader1);
+        loader1.style.display="none"
     });
+    loader1.addEventListener("webkitTransitionEnd", () => {
+        alert("yeah");
+        document.body.removeChild(loader1);
+        loader1.style.display="none"
+    });
+
 });

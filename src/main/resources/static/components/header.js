@@ -17,16 +17,32 @@ align-items: center;
     display: flex;
     background-color: #46464a;
     height: 60px;
-    z-index: 1;
+    z-index: 7;
+}
+
+.display-calendar { 
+ background-color: #6A6874 ;
+    border-radius: 30px;
+ padding: 8px;
+    text-decoration: none;
+        border: deeppink 3px solid;
+
+}
+.display-calendar a{
+text-decoration: none;     font-weight: bolder;
+   color: orange;
+
 }
 
  .nav-link{
     list-style-type: none;
     display: flex;
     align-items: center;
-width: 550px;
+    justify-content: space-between;
+  // width: 55px;
 height: auto;
     right: 50px;
+    border: blue 3px solid;
 }
 
 .logo{
@@ -37,61 +53,65 @@ display: none;
 }
 
 @media screen and (max-width: 800px){
-.triangle{
-position: absolute;
-right: 5%;
-display: inline-block;
-top: 5%;
-} 
-a, .dropbtn,.dropbtn i {
-font-size: 1rem !important;
-font-weight: normal;
-}
-.triangle {
-font-size: 6vw;
-color: cornflowerblue;
-}
-
-header {
-display: block;
-overflow-y: auto;
-position: fixed;
-left: -30%;
-top:0;
-
-padding-right: 20%;
-width: 40%;
-border-right: solid #F8F8F8 4px;
-transition: left 250ms linear 3.4ms;
-
-height: 100vh;
-
-
-}
-
-article, footer, .photo_Background:not(header){
-    margin-left: 12.56%;
-}
-
-header .logo{ margin: auto;
-width: 80%;
-height: auto;
-
-}
-
-#nav1 {
- width: 50%;
- height: 50%;
- display: grid;
- margin-left: 10%;
- margin-top: 5%;
-}
- .nav-link li {
- width: 100%;
-display: block;
-float: none;
-}
-
+    .triangle{
+    position: absolute;
+    right: 5%;
+    display: inline-block;
+    top: 5%;
+    } 
+    a, .dropbtn,.dropbtn i {
+    font-size: 1rem !important;
+    font-weight: normal;
+    }
+    .triangle {
+    font-size: 6vw;
+    color: cornflowerblue;
+    }
+    
+    header {
+    display: block;
+    overflow-y: auto;
+    position: fixed;
+    left: -30%;
+    top:0;
+    
+    padding-right: 20%;
+    width: 40%;
+    border-right: solid #F8F8F8 4px;
+    transition: left 250ms linear 3.4ms;
+    
+    height: 100vh;
+    
+    
+    }
+    article, footer, .photo_Background:not(header){
+        margin-left: 12.56%;
+    }
+    
+    header .logo{ margin: auto;
+    width: 80%;
+    height: auto;
+    
+    }
+    
+    #nav1 {
+     width: 50%;
+     height: 50%;
+     display: grid;
+     margin-left: 10%;
+     margin-top: 5%;
+     border: none;
+    }
+    .display-calendar{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    }
+     .nav-link li {
+     width: 100%;
+    display: block;
+    float: none;
+    }
 
 }
 
@@ -100,11 +120,11 @@ float: none;
 
   
 }
-.nav-link{
-width: 650px;
-height: 60px;
-list-style-type: none;
-}
+/*.nav-link{*/
+/*width: 650px;*/
+/*height: 60px;*/
+/*list-style-type: none;*/
+/*}*/
 
 
 li {
@@ -208,12 +228,11 @@ height: auto;
     <h1>Bain Communications</h1>
  </div>
 <header id="myHeader">
-<div id="bar" class="triangle"><i class="fa fa-bars"></i></div>
+    <ul class="nav-link" id="nav1">
+    <div id="bar" class="triangle"><i class="fa fa-bars"></i></div>
     <div class="logo">
        <a href="/"><img src="../images/bainLogo91.png" alt="log" /o></a> 
    </div>
-    <ul class="nav-link" id="nav1">
-        <li class="li-nav"><a href="/">Home</a></li>
         <li class="li-nav"><a href="/about">About</a></li>
         <li class="dropdown">
             <span  style="z-index: 3; " class="dropbtn"> Services<i style='padding-left:10px' class='fa fa-chevron-down'></i></span>
@@ -223,10 +242,10 @@ height: auto;
             </ul>
         </li>
         <li class="li-nav"><a href="/reviews">Reviews</a></li>
-        <li class="li-nav"><a href="/contact">Contact</a></li>
+       
     </ul>
-    
-</header>
+     <div class="display-calendar display-calendar-component "><a href="#" > FREE QUOTE</a>
+</div></header>
 
  </body>
     `;

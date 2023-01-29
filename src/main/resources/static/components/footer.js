@@ -56,4 +56,9 @@ if (page !== "") {
     changeColor("a", "#46464a");
     changeBackgroundColor("#myFooter","#6A6A75" );
 }
-document.querySelector(".display-calendar-component").addEventListener('click', ()=>{calendarComponent.style.display="block"; });
+document.querySelector(".display-calendar-component").addEventListener('click', ()=>{
+const loader1 = document.querySelector(".loader");
+loader1.style.zIndex="-3";
+//document.body.removeChild(loader1);
+   // loader1.style.display="none"
+    calendarComponent.style.display="block"; });
