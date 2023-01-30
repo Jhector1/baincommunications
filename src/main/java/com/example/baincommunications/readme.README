@@ -8,3 +8,6 @@ PROD_DB_PORT=8032
 PROD_DB_NAME=railway
 PROD_DB_PASSWORD=WfBNQlvjthU5ttPWMjRw
 PROD_DB_USERNAME=root
+
+git config --global user.email "jeanyveshector@gmail.com"
+  git config --global user.name "jhector1"

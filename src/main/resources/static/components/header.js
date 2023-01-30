@@ -15,13 +15,13 @@ class Header extends HTMLElement {
 justify-content: space-around;
 align-items: center;
     display: flex;
-    background-color: #46464a;
+    background-color: var(--element-color-two);
     height: 60px;
     z-index: 7;
 }
 
 .display-calendar { 
- background-color: #6A6874 ;
+ background-color: var(--element-color);
     border-radius: 30px;
  padding: 8px;
     text-decoration: none;
@@ -65,7 +65,7 @@ display: none;
     }
     .triangle {
     font-size: 6vw;
-    color: cornflowerblue;
+    color: var(--element-color-cornflower-blue);
     }
     
     header {
@@ -80,7 +80,7 @@ display: none;
     border-right: solid #F8F8F8 4px;
     transition: left 250ms linear 3.4ms;
     
-    height: 100vh;
+    height: 100%;
     
     
     }
@@ -132,7 +132,7 @@ li {
 }
 
 li a {
-    color: #6A6874;
+    color: var(--element-color);;
     text-align: center;
     padding: 14px 30px;
     text-decoration: none;
@@ -171,7 +171,7 @@ height: auto;
 
 .dropbtn {
   background-color: transparent;
-  color: #6A6874;
+  color: var(--element-color);;
   padding: 16px;
 
   font-size: 1.25rem;
@@ -190,14 +190,14 @@ height: auto;
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #46464a;
+  background-color: var(--element-color-two);
   min-width: 160px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: #6A6874;
+  color: var(--element-color);;
   padding: 12px 16px;
   text-decoration: none;
   display: block;

@@ -5,9 +5,14 @@
     font-family: Calibri, serif;
    // border: 1px red solid;
 }
+:root{
+    --element-color: #6A6874;
+    --element-color-two:#46464a;
+    --element-color-cornflower-blue: cornflowerblue;
+}
 
 a:hover, .dropdown:hover .dropbtn, .dropdown:hover i {
-    color: cornflowerblue !important;
+    color: var(--element-color-cornflower-blue) !important;
     background-color: transparent;
 }
 
@@ -42,14 +47,14 @@ html, body, article {
     padding: 3%;
     text-align: center;
     color: orange;
-    -webkit-text-stroke-color: #46464a;
+    -webkit-text-stroke-color: var(--element-color-two);
     -webkit-text-stroke-width: 1px;
 
 }
 
 .wrapper-head h3 {
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #46464a;
+    -webkit-text-stroke-color: var(--element-color-two);
     width: auto;
     font-size: 2.25rem;
     font-weight: bolder;
@@ -70,7 +75,7 @@ html, body, article {
     text-align: center;
     display: block;
 
-    background-color: cornflowerblue;
+    background-color: var(--element-color-cornflower-blue);
     padding: 10px;
     color: white;
     font-size: 1.25rem;
@@ -241,7 +246,7 @@ footer {
     align-items: center;
     justify-content: space-around;
     /*position: relative;*/
-    background-color: #46464a;
+    background-color: var(--element-color-two);;
     border: blue 2px solid;
     height: auto;
     padding: 30px;
@@ -413,8 +418,8 @@ calendar-component {
 .month li:last-child:hover, .month li:first-child:hover {
 
     cursor: pointer;
-    border: cornflowerblue;
-    background-color: cornflowerblue;
+    border: var(--element-color-cornflower-blue);
+    background-color: var(--element-color-cornflower-blue);
     color: white;
 }
 
@@ -463,7 +468,7 @@ calendar-component {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border: 2px cornflowerblue solid;
+    border: 2px var(--element-color-cornflower-blue) solid;
     border-radius: 50%;
 }
 
@@ -477,7 +482,7 @@ calendar-component {
     display: none;
     width: 12px;
     height: 12px;
-    background-color: cornflowerblue;
+    background-color: var(--element-color-cornflower-blue);
 }
 
 .custom-block {
@@ -501,7 +506,7 @@ calendar-component {
    // z-index: ;
     width: 30%;
     height: 30%;
-    background-color: cornflowerblue;
+    background-color: var(--element-color-cornflower-blue);
     position: absolute;
 }.rbvt{
     position: relative;
@@ -531,7 +536,7 @@ calendar-component {
 
 .available-time {
     position: relative;
-    background-color: cornflowerblue;
+    background-color: var(--element-color-cornflower-blue);
     color: white;
     width: 100px;
     margin: 3px;
