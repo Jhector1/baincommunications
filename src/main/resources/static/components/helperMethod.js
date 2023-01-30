@@ -116,7 +116,9 @@ function hideTimeReserved(date24, whichPath) {
 const path = window.location.pathname;
 const page = path.split("/").pop();
 const calendarComponent = document.querySelector("calendar-component");
-
-
-export {NavigateButton};
+function getCssVariableValue(css_variable){
+    const style = getComputedStyle(document.body)
+    return style.getPropertyValue(css_variable);
+}
+export {NavigateButton, getCssVariableValue};
 export {changeColor, changeBackgroundColor, page, calendarComponent, timeObject, hideTimeReserved};

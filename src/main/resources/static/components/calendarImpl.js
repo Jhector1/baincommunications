@@ -1,5 +1,5 @@
 import {Calendar} from "./calendar.js";
-import {hideTimeReserved} from "./helperMethod.js";
+import {getCssVariableValue, hideTimeReserved} from "./helperMethod.js";
 
 class Header {
     constructor() {
@@ -99,7 +99,7 @@ class CalendarPage {
 
         dayOfTheMonths1[index].style.backgroundColor = "#6495ED45";
         dayOfTheMonths1[index].style.color = "cornflowerblue";
-        dayOfTheMonths1[index].style.border = "1px #6A687461 solid";
+        dayOfTheMonths1[index].style.border = "1px getCssVariableValue('--main-border-color') solid";
 
     }
 
@@ -199,8 +199,7 @@ class DesignCalendar {
         }
         if (this.customDate > this.currentDate) {
             DesignCalendar.designDate(obj, index)(color)()();
-            this.designEvent(obj, index, "#6A687461", 'add');
-
+            this.designEvent(obj, index, getCssVariableValue("--main-border-color"), 'add');
         }
         if (this.currentDate === this.customDate) {
             document.querySelector(".prev").style.visibility = 'hidden';
@@ -258,13 +257,13 @@ class DesignCalendar {
             return () => {
                 //design for when customDate == currentDate
 
-                obj[index].style.backgroundColor = "cornflowerblue";
+                obj[index].style.backgroundColor = getCssVariableValue("--element-color-cornflower-blue");
                 obj[index].style.color = "white";
                 return () => {
                     //design for when customDate > currentDate
 
                     obj[index].style.backgroundColor = "transparent";
-                    obj[index].style.color = "#6A6874";
+                    obj[index].style.color = getCssVariableValue("--element-color")
                     obj[index].style.cursor = "pointer";
                     return () => {
                         //design for when customDate < currentDate

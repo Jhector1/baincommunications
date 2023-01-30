@@ -9,6 +9,7 @@
     --element-color: #6A6874;
     --element-color-two:#46464a;
     --element-color-cornflower-blue: cornflowerblue;
+    : #6A687461;
 }
 
 a:hover, .dropdown:hover .dropbtn, .dropdown:hover i {
@@ -160,6 +161,9 @@ p.description {
     calendar-component {
         width: 100%;
     }
+    .base_desc{
+        visibility: hidden;
+    }
 
     p.description, span, .contact li, .link li {
         font-size: 1rem !important;
@@ -303,7 +307,7 @@ calendar-component {
     left: 0;
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
     z-index: 3;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
     background-color: white;
 / / padding: 0 1 %;
 }
@@ -344,14 +348,14 @@ calendar-component {
     padding: 0 4%;
     width: 100%;
     background-color: white;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
 
 }
 
 .exit-button-box {
-    border-bottom: 1px #6A687461 solid;
-    border-left: 1px #6A687461 solid;
-    border-right: 1px #6A687461 solid;
+    border-bottom: 1px var(--main-border-color) solid;
+    border-left: 1px var(--main-border-color) solid;
+    border-right: 1px var(--main-border-color) solid;
     border-radius: 2% 2% 0 0;
 
     position: absolute;
@@ -378,7 +382,7 @@ calendar-component {
     text-align: center;
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
     z-index: 5;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
     background-color: white;
 / / padding: 0 1 %;
 }
@@ -402,12 +406,12 @@ calendar-component {
     display: flex;
 / / grid-template: 40 px / repeat(3, 1 fr);
     list-style-type: none;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
 
 }
 
 .month li:last-child, .month li:first-child {
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
 }
 
 .month li:nth-child(2), .month li:last-child, .month li:first-child {
@@ -429,7 +433,7 @@ calendar-component {
     justify-content: space-around;
     gap: 20px 20px;
     padding: 2%;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
     list-style-type: none;
 }
 
@@ -437,7 +441,7 @@ calendar-component {
     justify-content: center;
     justify-items: center;
     gap: 20px 20px;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
     display: grid;
     padding: 2%;
     grid-template: repeat(5, 1fr) / repeat(7, 1fr);
@@ -486,7 +490,7 @@ calendar-component {
 }
 
 .custom-block {
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
     padding: 2%;
 }
 
@@ -561,7 +565,7 @@ calendar-component {
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    border: #6A687461 1px solid;
+    border: var(--main-border-color) 1px solid;
 
 }
 

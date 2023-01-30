@@ -1,4 +1,4 @@
-import {changeBackgroundColor,changeColor, page} from "./helperMethod.js";
+import {changeBackgroundColor, changeColor, getCssVariableValue, page} from "./helperMethod.js";
 class Header extends HTMLElement {
     constructor() {
         super();
@@ -85,8 +85,11 @@ display: none;
     
     }
     article, footer, .photo_Background:not(header){
-        margin-left: 12.56%;
+       margin-left: 12.56%;
+       
+       
     }
+    
     
     header .logo{ margin: auto;
     width: 80%;
@@ -284,10 +287,10 @@ const changeHeaderStyle =()=> {
         const dropdown_content = document.querySelector(".dropdown-content");
         head_nav.style.borderBottom = "black 1px solid";
 
-        changeBackgroundColor("#myHeader", "#6A6A75");
+        changeBackgroundColor("#myHeader", getCssVariableValue("--element-color"));
         changeBackgroundColor(".dropdown-content", "#303035");
-        changeColor(".dropbtn", "#46464a");
-        changeColor(".dropbtn i", "#46464a");
+        changeColor(".dropbtn", getCssVariableValue("--element-color-two"));
+        changeColor(".dropbtn i", getCssVariableValue("--element-color-two"));
         dropdown_content.style.border = "grey 1px solid";
         dropdown_content.style.borderTop = "none";
         document.querySelector(".photo_Background").style.display = "none";
