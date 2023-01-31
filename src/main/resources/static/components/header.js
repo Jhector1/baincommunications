@@ -109,13 +109,7 @@ display: none;
      margin-top: 5%;
      border: none;
     }
-    .display-calendar{
-    background-color: transparent;
-    border: none;
-    display: block;
-    margin: auto;
-    
-    }
+
     /*.li-nav a{*/
     /*width: 100%;!important;*/
     /*}*/
@@ -297,7 +291,7 @@ const changeHeaderStyle =()=> {
 
     }
 }
-//whenWindowWidthLessThan800Px();
+whenWindowWidthLessThan800Px();
 changeHeaderStyle();
 const changeHeaderPosition=()=> {
     const x = window.matchMedia("(max-width: 801px)");
