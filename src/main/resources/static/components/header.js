@@ -17,7 +17,7 @@ align-items: center;
     display: flex;
     background-color: var(--element-color-two);
     height: 60px;
-    z-index: 7;
+   z-index: 1;
 }
 
 .display-calendar { 
@@ -28,10 +28,15 @@ align-items: center;
         border: deeppink 3px solid;
 
 }
-.display-calendar a{
-text-decoration: none;     font-weight: bolder;
-   color: orange;
-
+.display-calendar:hover{
+padding: 10px;
+background-color: #6A6874;
+}
+.display-calendar div{
+text-decoration: none;    
+ font-weight: bolder;
+   color: orange; !important;
+   text-align: center;
 }
 
  .nav-link{
@@ -39,10 +44,8 @@ text-decoration: none;     font-weight: bolder;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  // width: 55px;
-height: auto;
-    right: 50px;
-    border: blue 3px solid;
+    width: 40%;
+   // border: blue 3px solid;
 }
 
 .logo{
@@ -69,7 +72,8 @@ display: none;
     }
     
     header {
-    display: block;
+    display: flex;
+    flex-direction: column;
     overflow-y: auto;
     position: fixed;
     left: -30%;
@@ -80,7 +84,7 @@ display: none;
     border-right: solid #F8F8F8 4px;
     transition: left 250ms linear 3.4ms;
     
-    height: 100%;
+    height: 100vh;
     
     
     }
@@ -98,22 +102,25 @@ display: none;
     }
     
     #nav1 {
-     width: 50%;
-     height: 50%;
-     display: grid;
-     margin-left: 10%;
+     width: 100%;
+     height: 60%;
+     flex-direction: column;
+     display: flex;
      margin-top: 5%;
      border: none;
     }
     .display-calendar{
     background-color: transparent;
     border: none;
-    margin: auto;
-    }
-     .nav-link li {
-     width: 100%;
     display: block;
-    float: none;
+    margin: auto;
+    
+    }
+    /*.li-nav a{*/
+    /*width: 100%;!important;*/
+    /*}*/
+     .nav-link li {
+    padding: 10%;
     }
 
 }
@@ -121,7 +128,7 @@ display: none;
  .logo img{
    width: 100%; 
 
-  
+  }
 }
 /*.nav-link{*/
 /*width: 650px;*/
@@ -130,19 +137,8 @@ display: none;
 /*}*/
 
 
-li {
-    border-right: none;
-}
 
-li a {
-    color: var(--element-color);;
-    text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
-    font-size: 1.25rem;
-    display: inline;
-    font-weight: bold;
-}
+
 
 
 
@@ -245,10 +241,12 @@ height: auto;
             </ul>
         </li>
         <li class="li-nav"><a href="/reviews">Reviews</a></li>
-       
-    </ul>
-     <div class="display-calendar display-calendar-component "><a href="#" > FREE QUOTE</a>
-</div></header>
+          
+
+    </ul>  
+    <a href="#" class="display-calendar display-calendar-component"  ><div>GET A QUOTE</div > </a>
+
+</header>
 
  </body>
     `;
@@ -293,12 +291,13 @@ const changeHeaderStyle =()=> {
         changeColor(".dropbtn i", getCssVariableValue("--element-color-two"));
         dropdown_content.style.border = "grey 1px solid";
         dropdown_content.style.borderTop = "none";
+        changeBackgroundColor(".display-calendar", getCssVariableValue("--element-color-two") )
         document.querySelector(".photo_Background").style.display = "none";
         whenWindowWidthLessThan800Px();
 
     }
 }
-whenWindowWidthLessThan800Px();
+//whenWindowWidthLessThan800Px();
 changeHeaderStyle();
 const changeHeaderPosition=()=> {
     const x = window.matchMedia("(max-width: 801px)");
@@ -311,14 +310,14 @@ const changeHeaderPosition=()=> {
 
                 if (!bar.contains(event.target)) {
                     // header.classList.add("headerLess800px");
-                    header.style.display = 'block';
-                    header.style.position = 'fixed';
+                    // header.style.display = 'block';
+                    // header.style.position = 'fixed';
                     header.style.left = '-30%';
-                    header.style.top = '0px';
+                    //header.style.top = '0px';
                     header.style.paddingRight = '20%';
-                    header.style.width = '40%';
-                    header.style.borderRight = 'solid #F8F8F8 4px';
-                    header.style.height = '100%';
+                   // header.style.width = '40%';
+                  //  header.style.borderRight = 'solid #F8F8F8 4px';
+                  //  header.style.height = '100%';
                     document.querySelector(".triangle").style.display = "inline-block";
                 } else {
                     document.querySelector(".triangle").style.display = "none";
