@@ -12,7 +12,7 @@ class Header extends HTMLElement {
 
 
  header {
-justify-content: flex-start;
+justify-content: space-around;
 align-items: center;
     display: flex;
     background-color: var(--element-color-two);
@@ -72,7 +72,8 @@ display: none;
     }
     
     header {
-    display: flex;
+    justify-content: flex-start;
+
     flex-direction: column;
     overflow-y: auto;
     position: fixed;
