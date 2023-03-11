@@ -24,7 +24,7 @@ class Footer extends HTMLElement {
     </div>
     <div class="link">
         <ul>
-            <li class="link-li display-calendar-component" ><a href="#">FREE QUOTE</a></li>
+            <li class="link-li display-calendar-component" ><a class="display-calendar-component" href="#popup">FREE QUOTE</a></li>
             <li class="link-li"><a href="#"> Services</a></li>
             <li class="link-li"><a href="#">Testimonials</a></li>
             <li class="link-li"><a href="#">Blog</a></li>
